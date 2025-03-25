@@ -1,0 +1,121 @@
+/* Admin Dashboard Styling */
+.admin-dashboard {
+  width: 80%;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Admin Title */
+.admin-dashboard h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Buttons Container */
+.admin-actions {
+  margin-bottom: 20px;
+}
+
+/* CRUD Buttons */
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Add Button */
+.add-btn {
+  background: #28a745;
+  color: white;
+}
+
+.add-btn:hover {
+  background: #218838;
+}
+
+/* Update Button */
+.update-btn {
+  background: #ffc107;
+  color: white;
+}
+
+.update-btn:hover {
+  background: #e0a800;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+/* Table Styling */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.admin-table th {
+  background: #f8f9fa;
+  color: #333;
+  font-weight: bold;
+}
+
+.admin-table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* Style for the preview image when adding or updating an item */
+.image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Ensures the image is resized to fit within the box */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+  margin-top: 10px;
+}
+
+/* Style for the item image in the table */
+.item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Ensures the image fits the 100px by 100px box */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .admin-table {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
