@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
 import "./CSS/ProductDetails.css";
-import { useNavigate } from "react-router-dom";
+
+const MAX_QUANTITY = 10;
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState("");
   const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedItems = JSON.parse(localStorage.getItem("shopItems")) || [];
@@ -19,10 +22,13 @@ const ProductDetails = () => {
   }, [productId]);
 
   const handleAddToCart = () => {
+    if (quantity > MAX_QUANTITY) {
+      setError(`You can only order up to ${MAX_QUANTITY} of this item.`);
+      return;
+    }
     addToCart({ ...product, quantity });
+    setError(""); // Clear error if successful
   };
-
-  const navigate = useNavigate();
 
   if (!product) return <p>Loading...</p>;
 
@@ -41,16 +47,32 @@ const ProductDetails = () => {
         {product.old_price && (
           <p className="old-price">Was: ${product.old_price}</p>
         )}
+
         <div className="quantity-selector">
           <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>
             -
           </button>
           <span>{quantity}</span>
-          <button onClick={() => setQuantity(quantity + 1)}>+</button>
+          <button
+            onClick={() => {
+              if (quantity < MAX_QUANTITY) {
+                setQuantity(quantity + 1);
+                setError(""); // Clear any previous error
+              } else {
+                setError(`Maximum ${MAX_QUANTITY} items allowed.`);
+              }
+            }}
+          >
+            +
+          </button>
         </div>
+
+        {error && <p className="error-message">{error}</p>}
+
         <button className="add-to-cart" onClick={handleAddToCart}>
           Add to Cart
         </button>
+
         <div className="product-description">
           <h3>Description:</h3>
           <p>
