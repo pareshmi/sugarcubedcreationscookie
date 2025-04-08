@@ -1,0 +1,36 @@
+.our-story {
+  text-align: center;
+  padding: 50px;
+  background-color: #ffeef8; /* Soft baby pink background */
+  color: #4a2c2a; /* Rich brown text for warmth */
+  font-family: "Arial", sans-serif;
+}
+
+.our-story h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff6f61; /* Soft coral */
+}
+
+.our-story p {
+  font-size: 1.2rem;
+  margin: 15px auto;
+  max-width: 800px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.our-story p:first-of-type {
+  font-style: italic;
+}
+
+.our-story p:last-of-type {
+  font-weight: bold;
+}
+
+.our-story::before {
+  content: "🍪"; /* Cookie emoji */
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+}

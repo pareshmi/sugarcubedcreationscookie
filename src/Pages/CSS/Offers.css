@@ -1,0 +1,40 @@
+.offers {
+  text-align: center;
+  padding: 50px;
+  background-color: #ffeef8; /* Soft baby pink background */
+  color: #4a2c2a; /* Warm brown text color */
+  font-family: "Arial", sans-serif;
+}
+
+.offers h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff6f61; /* Soft coral */
+}
+
+.offers p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.offers ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.offers ul li {
+  font-size: 1.1rem;
+  background-color: #ffd1dc; /* Lighter pinkish hue */
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.offers ul li:hover {
+  background-color: #ffb3c1; /* Lighter pink on hover */
+  transition: 0.3s ease-in-out;
+}
